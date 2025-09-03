@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>Login</title>
+   <style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    body{
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, #940808, #ca1f1f);
+
+    }
+    @media screen and (max-width: 468px) {
+        main{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .logosenai{
+            width: 80%;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .logosenai img{
+            width: 250px;
+            height: 100px;
+            margin: 0;
+        }
+        .logosenai h1{
+            margin-bottom: 50px;
+            color: #ffffff;
+            font-size: 15px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .formulariologin{
+            /* margin-top: 210px; */
+            width: 100%;
+            height: 220px;
+            background-color: #FFFBFB;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .formulariologin form{
+            display: grid;
+            grid-template-rows: auto auto;
+            gap: 15px;
+        }
+        /* .formulariologin form input{
+            width: 300px;
+            height: 35px;
+            border-radius: 20px;
+            background-color: #F4F1F1;
+            border: #F4F1F1;
+            
+        } */
+         .input-container{
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+            padding: 8px;
+            width: 300px;
+            margin-bottom: 10px;
+            background: #F4F1F1;
+         }
+         .input-container i{
+            margin-right: 8px;
+         }
+         .input-container input{
+            border: none;
+            outline: none;
+            flex: 1;        
+            font-size: 16px;
+            background-color: #F4F1F1;
+         }
+         .esqueci-senha{
+            width: 80%;
+            height: auto;
+            display: flex;
+            justify-content: end;
+            align-items: end;
+         }
+         .esqueci-senha a{
+            font-size: 10px;
+            color: #414141;
+         }
+         .button{
+            margin-top: 15px;
+         }
+         .button button{
+            width: 300px;
+            height: 30px;
+            border-radius: 20px;
+            background-color: #940808;
+            border: 0;
+            color: #ffffff;
+            font-size: 15px;
+            animation: 0.3s ease-in-out;
+         }
+         .button button:hover{
+             transform: scale(1.02);
+           }
+         
+    }
+    
+
+   </style>
+</head>
+<body>
+    <header></header>
+
+    <main>
+        <div class="logosenai">
+            <img src="../assets/logo_senai.png" alt="logosenai" p>
+                <h1>Formando quem forma a indústria.</h1>
+        </div>
+        
+
+        <div class="formulariologin">
+            <form action="">
+                <div class="input-container">
+                    <i class="bi bi-envelope"></i>
+                    <input type="email" name="email" id="email" placeholder="Email">
+                  </div>
+                
+                  <div class="input-container">
+                    <i class="bi bi-lock"></i>
+                    <input type="password" name="senha" id="senha" placeholder="Senha">
+                  </div>
+            </form>
+
+            <div class="esqueci-senha">
+               <a href="">Esqueci minha senha</a> 
+            </div>
+            
+            <div class="button">
+                <button type="button" onclick="Entrar()">ENTRAR</button>
+            </div>
+        </div>
+    </main>
+
+
+    <footer></footer>
+    <script>
+        function Entrar(){
+            window.location.href = 'home_colaborador.html';
+        }
+    </script>
+   
+</body>
+</html>
