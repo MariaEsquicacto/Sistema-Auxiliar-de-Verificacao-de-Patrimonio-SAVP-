@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Perfil</title>
+    <title>Editar Perfil</title>
 </head>
 <body>
     <header class="perfil-colaborador">
@@ -61,29 +61,16 @@
 
          </div>
 
-        <div class="editar-logout">
-            <div class="card" onclick="Sair()">
-                <i class="bi bi-box-arrow-in-right" style="color: #940808;"></i>
-                <p>Sair</p>
-            </div>
-            <div class="card" onclick="Editar()">
-                <i class="bi bi-person-fill-gear" style="color: #940808;"></i>
-                <p>Editar perfil</p>
-            </div>
+        <div class="buton-editar">
+            <button type="button" onclick="Salvar()">Salvar</button>
         </div>
     </main>
 
-    <footer></footer>
     <script>
-        function Editar(){
-            window.location.href = 'editar_colaborador.html';
+        function Salvar(){
+            window.location.href = 'perfil_colaborador.html';
+            alert("Usuário editado com sucesso!");
         }
-
-        function Sair(){
-            window.location.href = 'login.html';
-            alert("Você saiu da sua conta...")
-        }
-
     </script>
 </body>
 </html>

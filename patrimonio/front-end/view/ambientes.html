@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Perfil</title>
+    <title>Ambientes</title>
 </head>
 <body>
-    <header class="perfil-colaborador">
+    <header>
         <div class="menu">
             <button class="hamburguer">
                 <div id="barra1" class="barra"></div>
@@ -36,54 +37,43 @@
         </div>
     </header>
 
-    <main class="main-colaborador">
-        <div class="conteiner-perfil">
-            <div class="perfil">
-                <img src="../assets/man.png" alt="Foto do colaborador">
-                <p>Colaborador</p>
-            </div>
+    <main>
+        <div class="escrita">
+            <i class="bi bi-arrow-left" onclick="Voltar()"></i>
+            <h1>Ambientes</h1>
         </div>
 
-        <!-- DADOS -->
-         <div class="dados">
-            <div class="info">
-                <p>Email</p>
-                <p>colaborador@gmail.com</p>
-            </div>
-            <div class="info">
-                <p>Senha</p>
-                <p>**********</p>
-            </div>
-            <div class="info">
-                <p>Cargo</p>
-                <p>Colaborador</p>
-            </div>
-
-         </div>
-
-        <div class="editar-logout">
-            <div class="card" onclick="Sair()">
-                <i class="bi bi-box-arrow-in-right" style="color: #940808;"></i>
-                <p>Sair</p>
-            </div>
-            <div class="card" onclick="Editar()">
-                <i class="bi bi-person-fill-gear" style="color: #940808;"></i>
-                <p>Editar perfil</p>
-            </div>
+        
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Pesquisar Ambiente..." aria-label="Search" id="barra" />
+        <button class="btn btn-outline" type="submit" style="background-color: #940808; color:#fff;"><i class="bi bi-search"></i></button>
+      </form>
+    
+      <div class="ambientes-card">
+        <div class="conteiners">
+            <!-- icon -->
+             <p>Laboratório 01 de TI</p>
         </div>
+        <div class="conteiners">
+            <!-- icon -->
+             <p>Laboratório 01 de TI</p>
+        </div>
+        <div class="conteiners">
+            <!-- icon -->
+             <p>Laboratório 01 de TI</p>
+        </div>
+        <div class="conteiners">
+            <!-- icon -->
+             <p>Laboratório 01 de TI</p>
+        </div>
+
+      </div>
     </main>
 
-    <footer></footer>
     <script>
-        function Editar(){
-            window.location.href = 'editar_colaborador.html';
+        function Voltar(){
+            window.location.href = 'home_colaborador.html'
         }
-
-        function Sair(){
-            window.location.href = 'login.html';
-            alert("Você saiu da sua conta...")
-        }
-
     </script>
 </body>
 </html>
