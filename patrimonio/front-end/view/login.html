@@ -18,6 +18,106 @@
         background: linear-gradient(to right, #940808, #ca1f1f);
 
     }
+    main{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .logosenai{
+            width: 50%;
+            border-radius: 40%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* background-color: #940808; */
+            /* position: absolute;
+            padding: 40px 20px;   */
+            /* top: -150px; */
+            
+        }
+        .logosenai img{
+            width: 250px;
+            height: 100px;
+            margin: 0;
+        }
+        .logosenai h1{
+            margin-bottom: 50px;
+            color: #ffffff;
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .formulariologin{
+            margin-top: 50px;
+            width: 50%;
+            height: 350px;
+            background-color: #FFFBFB;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* position: relative;
+            padding: 40px 20px;   */
+        }
+        .formulariologin form{
+            display: grid;
+            grid-template-rows: auto auto;
+            gap: 30px;
+        }
+        .input-container{
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+            padding: 10px;
+            width: 500px;
+            margin-bottom: 10px;
+            background: #F4F1F1;
+            height: 40px;
+         }
+         .input-container i{
+            margin-right: 10px;
+         }
+         .input-container input{
+            border: none;
+            outline: none;
+            flex: 1;        
+            font-size: 16px;
+            background-color: #F4F1F1;
+         }
+         .esqueci-senha{
+            width: 65%;
+            height: auto;
+            display: flex;
+            justify-content: end;
+            align-items: end;
+            padding: 10px;
+         }
+         .esqueci-senha a{
+            font-size: 13px;
+            color: #414141;
+         }
+         .button{
+            margin-top: 15px;
+         }
+         .button button{
+            width: 500px;
+            height: 50px;
+            border-radius: 20px;
+            background-color: #940808;
+            border: 0;
+            color: #ffffff;
+            font-size: 20px;
+            animation: 0.3s ease-in-out;
+         }
+         .button button:hover{
+             transform: scale(1.02);
+           }
+    
     @media screen and (max-width: 468px) {
         main{
             width: 100%;
@@ -134,6 +234,7 @@
         
 
         <div class="formulariologin">
+            
             <form action="">
                 <div class="input-container">
                     <i class="bi bi-envelope"></i>
@@ -159,9 +260,43 @@
 
     <footer></footer>
     <script>
-        function Entrar(){
-            window.location.href = 'home_colaborador.html';
+        async function Entrar() {
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value;
+
+    if (!email || !senha) {
+        alert("Preencha todos os campos!");
+        return;
+    }
+
+    try {
+        const response = await fetch("/../patrimonio/back-end/endpoints/post/LoginSSO.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email: email, senha: senha })
+        });
+
+        const data = await response.json();
+        console.log(data); // para debug
+
+        if (data.status === "success") {
+            alert("Login realizado com sucesso!");
+            // salvar token no localStorage (ou sessionStorage)
+            localStorage.setItem("token", data.token);
+
+            // redireciona para home
+            window.location.href = "home_colaborador.html";
+        } else {
+            alert("Erro: " + data.message);
         }
+
+    } catch (error) {
+        console.error("Erro na requisição:", error);
+        alert("Erro de conexão com o servidor.");
+    }
+}
     </script>
    
 </body>

@@ -1,67 +1,190 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <title>Cadastro</title>
-    <style>
-      *{
-          margin: 0;
-          padding: 0;
-          font-family: Arial, Helvetica, sans-serif;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <title>Cadastro</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #940808, #ca1f1f);
+
+    }
+
+    main {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .logosenai {
+      width: 50%;
+      /* border-radius: 40%; */
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      /* background-color: #940808; */
+      /* position: absolute;
+            padding: 40px 20px;   */
+      /* top: -150px; */
+
+    }
+
+    .logosenai img {
+      width: 250px;
+      height: 100px;
+      margin: 0;
+    }
+
+    .logosenai h1 {
+      margin-bottom: 50px;
+      color: #ffffff;
+      font-size: 20px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .formulariocadastro {
+      margin-top: 30px;
+      width: 50%;
+      height: 500px;
+      background-color: #FFFBFB;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      /* position: relative;
+            padding: 40px 20px;   */
+    }
+
+    .formulariocadastro form {
+      display: grid;
+      grid-template-rows: auto auto;
+      gap: 30px;
+    }
+
+    .input-container {
+      display: flex;
+      align-items: center;
+      border-radius: 20px;
+      padding: 10px;
+      width: 500px;
+      margin-bottom: 10px;
+      background: #F4F1F1;
+      height: 40px;
+    }
+
+    .input-container i {
+      margin-right: 10px;
+    }
+
+    .input-container input {
+      border: none;
+      outline: none;
+      flex: 1;
+      font-size: 16px;
+      background-color: #F4F1F1;
+    }
+
+    .esqueci-senha {
+      width: 65%;
+      height: auto;
+      display: flex;
+      justify-content: end;
+      align-items: end;
+      padding: 10px;
+    }
+
+    .esqueci-senha a {
+      font-size: 13px;
+      color: #414141;
+    }
+
+    .button {
+      margin-top: 15px;
+    }
+
+    .button button {
+      width: 500px;
+      height: 50px;
+      border-radius: 20px;
+      background-color: #940808;
+      border: 0;
+      color: #ffffff;
+      font-size: 20px;
+      animation: 0.3s ease-in-out;
+    }
+
+    .button button:hover {
+      transform: scale(1.02);
+    }
+
+    @media screen and (max-width: 468px) {
+      main {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
       }
-      body{
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(to right, #940808, #ca1f1f);
+
+      .logosenai {
+        width: 80%;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
       }
-      @media screen and (max-width: 468px) {
-          main{
-              width: 100%;
-              height: 100vh;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              flex-direction: column;
-          }
-          .logosenai{
-              width: 80%;
-              height: 400px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              flex-direction: column;
-          }
-          .logosenai img{
-              width: 250px;
-              height: 100px;
-              margin: 0;
-          }
-          .logosenai h1{
-              margin-bottom: 50px;
-              color: #ffffff;
-              font-size: 15px;
-              font-family: 'Courier New', Courier, monospace;
-          }
-          .formulariocadastro{
-              /* margin-top: 210px; */
-              width: 100%;
-              height: 400px;
-              background-color: #FFFBFB;
-              border-top-right-radius: 20px;
-              border-top-left-radius: 20px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              flex-direction: column;
-          }
-          .formulariocadastro form{
-              display: grid;
-              grid-template-rows: auto auto;
-              gap: 15px;
-          }
-          /* .formulariologin form input{
+
+      .logosenai img {
+        width: 250px;
+        height: 100px;
+        margin: 0;
+      }
+
+      .logosenai h1 {
+        margin-bottom: 50px;
+        color: #ffffff;
+        font-size: 15px;
+        font-family: 'Courier New', Courier, monospace;
+      }
+
+      .formulariocadastro {
+        /* margin-top: 210px; */
+        width: 100%;
+        height: 400px;
+        background-color: #FFFBFB;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .formulariocadastro form {
+        display: grid;
+        grid-template-rows: auto auto;
+        gap: 15px;
+      }
+
+      /* .formulariologin form input{
               width: 300px;
               height: 35px;
               border-radius: 20px;
@@ -69,128 +192,174 @@
               border: #F4F1F1;
               
           } */
-           .input-container, .select-container{
-              display: flex;
-              align-items: center;
-              border-radius: 20px;
-              padding: 8px;
-              width: 300px;
-              margin-bottom: 10px;
-              background: #F4F1F1;
-           }
-           .input-container i, .select-container i{
-              margin-right: 8px;
-           }
-           .input-container input{
-              border: none;
-              outline: none;
-              flex: 1;        
-              font-size: 16px;
-              background-color: #F4F1F1;
-           }
-           .esqueci-senha{
-              width: 80%;
-              height: auto;
-              display: flex;
-              justify-content: end;
-              align-items: end;
-           }
-           .esqueci-senha a{
-              font-size: 10px;
-              color: #414141;
-           }
-           .button{
-              margin-top: 15px;
-           }
-           .button button{
-              width: 300px;
-              height: 30px;
-              border-radius: 20px;
-              background-color: #940808;
-              border: 0;
-              color: #ffffff;
-              font-size: 15px;
-              animation: 0.3s ease-in-out;
-           }
-           .button button:hover{
-             transform: scale(1.02);
-           }
-           .select-container select{
-            border: none;
-            outline: none;
-            flex: 1;
-            background-color: transparent;
-            /* font-family: Arial, Helvetica, sans-serif; */
-            color: #757575;
-            font-size: 16px;
-           }
-          
+      .input-container,
+      .select-container {
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+        padding: 8px;
+        width: 300px;
+        margin-bottom: 10px;
+        background: #F4F1F1;
       }
-      
-  
-     </style>
+
+      .input-container i,
+      .select-container i {
+        margin-right: 8px;
+      }
+
+      .input-container input {
+        border: none;
+        outline: none;
+        flex: 1;
+        font-size: 16px;
+        background-color: #F4F1F1;
+      }
+
+      .esqueci-senha {
+        width: 80%;
+        height: auto;
+        display: flex;
+        justify-content: end;
+        align-items: end;
+      }
+
+      .esqueci-senha a {
+        font-size: 10px;
+        color: #414141;
+      }
+
+      .button {
+        margin-top: 15px;
+      }
+
+      .button button {
+        width: 300px;
+        height: 30px;
+        border-radius: 20px;
+        background-color: #940808;
+        border: 0;
+        color: #ffffff;
+        font-size: 15px;
+        animation: 0.3s ease-in-out;
+      }
+
+      .button button:hover {
+        transform: scale(1.02);
+      }
+
+      .select-container select {
+        border: none;
+        outline: none;
+        flex: 1;
+        background-color: transparent;
+        /* font-family: Arial, Helvetica, sans-serif; */
+        color: #757575;
+        font-size: 16px;
+      }
+
+    }
+  </style>
 </head>
+
 <body>
-    <header></header>
-    <main>
-      <div class="logosenai">
-        <img src="../assets/logo_senai.png" alt="logosenai" p>
-            <h1>Formando quem forma a indústria.</h1>
+  <header></header>
+  <main>
+    <div class="logosenai">
+      <img src="../assets/logo_senai.png" alt="logosenai" p>
+      <h1>Formando quem forma a indústria.</h1>
     </div>
 
-        <div class="formulariocadastro">
-            <form action="">
-              <div class="input-container">
-                <i class="bi bi-person"></i>
-                <input type="text" name="nome" id="nome" placeholder="Nome">
-              </div>
-
-              <div class="input-container">
-                <i class="bi bi-envelope"></i>
-                <input type="email" name="email" id="email" placeholder="Email">
-              </div>
-            
-              <div class="input-container">
-                <i class="bi bi-lock"></i>
-                <input type="password" name="senha" id="senha" placeholder="Senha">
-              </div>
-                <!-- Dropdown Cargo -->
-                <div class="select-container">
-                  <i class="bi bi-briefcase"></i>
-                  <select name="cargo" id="cargo">
-                    <option value="" disabled selected>Selecione o cargo</option>
-                    <option value="1">Gestor</option>
-                    <option value="2">Colaborador</option>
-                  </select>
-                </div>
-            </form>
-
-            <div class="button">
-                <button type="submit">CADASTRAR</button>
-            </div>
+    <div class="formulariocadastro">
+      <form action="" id="formCadastro">
+        <div class="input-container">
+          <i class="bi bi-person"></i>
+          <input type="text" name="nome" id="nome" placeholder="Nome">
         </div>
 
-       
-    </main>
+        <div class="input-container">
+          <i class="bi bi-envelope"></i>
+          <input type="email" name="email" id="email" placeholder="Email">
+        </div>
+
+        <div class="input-container">
+          <i class="bi bi-lock"></i>
+          <input type="password" name="senha" id="senha" placeholder="Senha">
+        </div>
+        <!-- Dropdown Cargo -->
+        <div class="select-container">
+          <i class="bi bi-briefcase"></i>
+          <select name="cargo" id="cargo">
+            <option value="" disabled selected>Selecione o cargo</option>
+            <option value="1">Gestor</option>
+            <option value="2">Colaborador</option>
+          </select>
+        </div>
+        <div class="button">
+          <button type="submit">CADASTRAR</button>
+        </div>
+      </form>
 
 
-    <footer></footer>
+    </div>
 
-    <script>
-      function cadastrar() {
-        // Pegando valores dos campos (opcional)
-        const nome = document.getElementById("nome").value;
-        const email = document.getElementById("email").value;
-        const cargo = document.getElementById("cargo").value;
 
-    if (!nome || !email || !cargo) {
-      alert("Por favor, preencha todos os campos!");
-      return false; // não envia
-    }
+  </main>
 
-      alert("✅ Cadastro realizado com sucesso!");
-      return false; // evita recarregar a página
-    }
-          </script>
+
+  <footer></footer>
+
+  <script>
+
+    document.getElementById("formCadastro").addEventListener("submit", function (e) {
+      e.preventDefault(); // impede recarregar a página
+
+      // Pegando valores dos campos
+      const nome = document.getElementById("nome").value;
+      const email = document.getElementById("email").value;
+      const senha = document.getElementById("senha").value;
+      const cargo = document.getElementById("cargo").value;
+
+      if (!nome || !email || !senha || !cargo) {
+        alert("Por favor, preencha todos os campos!");
+        return;
+      }
+
+      // Criando objeto para enviar
+      const data = {
+        usuario_nome: nome,
+        usuario_email: email,
+        usuario_senha: senha,  // se você quiser salvar a senha
+        usuario_nivel: cargo,
+        usuario_del: "ativo"
+      };
+
+      // Fazendo requisição para o PHP
+      fetch("/../patrimonio/back-end/endpoints/post/Post_usuario.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+        .then(response => response.json())
+        .then(result => {
+          if (result.status === "success") {
+            alert(result.message);
+            // opcional: redirecionar
+            window.location.href = "login.html";
+          } else {
+            alert("Erro: " + result.message);
+          }
+        })
+        .catch(error => {
+          console.error("Erro na requisição:", error);
+          alert("Erro ao tentar cadastrar usuário.");
+        });
+    });
+
+
+  </script>
 </body>
+
 </html>

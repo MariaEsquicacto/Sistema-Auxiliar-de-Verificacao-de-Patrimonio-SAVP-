@@ -9,24 +9,13 @@
 </head>
 <body>
     <header>
+        <div class="header-colaborador">
         <div class="menu">
             <button class="hamburguer">
                 <div id="barra1" class="barra"></div>
                 <div id="barra2" class="barra"></div>
                 <div id="barra3" class="barra"></div>
             </button>
-            <!-- <nav>
-                <ul>
-                    <div class="perfil">
-                        <img src="" alt="foto de perfil">
-                        <p>Colaborador</p>
-                    </div>
-                    <li><a href="estoque.php">Home</a></li>
-                    <li><a href="calendario.php">Ambientes</a></li>
-                    <li><a href="relatorio.php">Dashboard</a></li>
-                    <li><a href="#" id="logout-btn">Sair</a></li>
-                </ul>
-            </nav> -->
         </div>
         <div class="logo">
             <img src="../assets/logo_senai.png" alt="logo-senai">
@@ -34,13 +23,14 @@
         <div class="notificacao">
             <i class="bi bi-bell"></i>
         </div>
+    </div>
     </header>
 
 
     <main>
         <div class="mensagem">
             <img src="../assets/man.png" alt="Foto de perfil">
-            <p>Bem Vindo, Colaborador</p>
+            <p id="bemVindo">Bem-vindo, </p>
         </div>
 
         <div class="central">
@@ -56,6 +46,15 @@
     <script>
         function Ambientes(){
             window.location.href = 'ambientes.html'
+        }
+
+        // Atualiza a mensagem com o nome do usuário
+        const nomeUsuario = localStorage.getItem("usuario_nome") || "Colaborador";
+        document.getElementById("bemVindo").textContent = `Bem-vindo, ${nomeUsuario}`;
+
+        // Função para redirecionar
+        function Ambientes() {
+            window.location.href = 'ambientes.html';
         }
     </script>
 </body>
