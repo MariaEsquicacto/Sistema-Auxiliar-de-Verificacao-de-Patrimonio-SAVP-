@@ -1,6 +1,8 @@
 <?php
 require_once "../../config/database.php";
 header("Content-Type: application/json");
+header("Access-Control-Allow-Origin: *");
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {

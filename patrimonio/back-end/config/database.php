@@ -2,7 +2,7 @@
 
 function conn() {
     $host = 'localhost';         // ou o IP do servidor do banco
-    $dbname = 'patrimonio';   // substitua pelo nome do seu banco
+    $dbname = 'enzo-zanardi';   // substitua pelo nome do seu banco
     $user = 'root';           // seu usuário do banco
     $pass = '';             // sua senha do banco
     $charset = 'utf8mb4';

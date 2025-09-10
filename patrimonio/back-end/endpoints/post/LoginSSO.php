@@ -1,6 +1,8 @@
 <?php
 require_once "../../config/database.php";
 header("Content-Type: application/json");
+header("Access-Control-Allow-Origin: *");
+
 
 // Define a duração do timeout em segundos (e.g., 2 horas)
 $timeout_duration = 2 * 60 * 60; // 2 horas

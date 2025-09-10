@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="../css/style.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>Login</title>
-   <style>
-    *{
-        margin: 0;
-        padding: 0;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    body{
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to right, #940808, #ca1f1f);
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-    }
-    main{
+        body {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #940808, #ca1f1f);
+
+        }
+
+        main {
             width: 100%;
             height: 100vh;
             display: flex;
@@ -26,7 +29,8 @@
             align-items: center;
             flex-direction: column;
         }
-        .logosenai{
+
+        .logosenai {
             width: 50%;
             border-radius: 40%;
             height: 100px;
@@ -38,20 +42,23 @@
             /* position: absolute;
             padding: 40px 20px;   */
             /* top: -150px; */
-            
+
         }
-        .logosenai img{
+
+        .logosenai img {
             width: 250px;
             height: 100px;
             margin: 0;
         }
-        .logosenai h1{
+
+        .logosenai h1 {
             margin-bottom: 50px;
             color: #ffffff;
             font-size: 20px;
             font-family: 'Courier New', Courier, monospace;
         }
-        .formulariologin{
+
+        .formulariologin {
             margin-top: 50px;
             width: 50%;
             height: 350px;
@@ -64,12 +71,14 @@
             /* position: relative;
             padding: 40px 20px;   */
         }
-        .formulariologin form{
+
+        .formulariologin form {
             display: grid;
             grid-template-rows: auto auto;
             gap: 30px;
         }
-        .input-container{
+
+        .input-container {
             display: flex;
             align-items: center;
             border-radius: 20px;
@@ -78,33 +87,39 @@
             margin-bottom: 10px;
             background: #F4F1F1;
             height: 40px;
-         }
-         .input-container i{
+        }
+
+        .input-container i {
             margin-right: 10px;
-         }
-         .input-container input{
+        }
+
+        .input-container input {
             border: none;
             outline: none;
-            flex: 1;        
+            flex: 1;
             font-size: 16px;
             background-color: #F4F1F1;
-         }
-         .esqueci-senha{
+        }
+
+        .esqueci-senha {
             width: 65%;
             height: auto;
             display: flex;
             justify-content: end;
             align-items: end;
             padding: 10px;
-         }
-         .esqueci-senha a{
+        }
+
+        .esqueci-senha a {
             font-size: 13px;
             color: #414141;
-         }
-         .button{
+        }
+
+        .button {
             margin-top: 15px;
-         }
-         .button button{
+        }
+
+        .button button {
             width: 500px;
             height: 50px;
             border-radius: 20px;
@@ -113,57 +128,67 @@
             color: #ffffff;
             font-size: 20px;
             animation: 0.3s ease-in-out;
-         }
-         .button button:hover{
-             transform: scale(1.02);
-           }
-    
-    @media screen and (max-width: 468px) {
-        main{
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
         }
-        .logosenai{
-            width: 80%;
-            height: 500px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+
+        .button button:hover {
+            transform: scale(1.02);
         }
-        .logosenai img{
-            width: 250px;
-            height: 100px;
-            margin: 0;
-        }
-        .logosenai h1{
-            margin-bottom: 50px;
-            color: #ffffff;
-            font-size: 15px;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        .formulariologin{
-            /* margin-top: 210px; */
-            width: 100%;
-            height: 220px;
-            background-color: #FFFBFB;
-            border-top-right-radius: 20px;
-            border-top-left-radius: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        .formulariologin form{
-            display: grid;
-            grid-template-rows: auto auto;
-            gap: 15px;
-        }
-        /* .formulariologin form input{
+
+        @media screen and (max-width: 470px) {
+            main {
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .logosenai {
+                width: 80%;
+                height: 550px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .logosenai img {
+                width: 250px;
+                height: 100px;
+                margin: 0;
+            }
+
+            .logosenai h1 {
+                margin-bottom: 50px;
+                color: #ffffff;
+                font-size: 15px;
+                font-family: 'Courier New', Courier, monospace;
+            }
+
+            .formulariologin {
+                /* margin-top: 210px; */
+                width: 100%;
+                height: 400px;
+                background-color: #FFFBFB;
+                border-top-right-radius: 20px;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                /* border-radius: 0; */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .formulariologin form {
+                display: grid;
+                grid-template-rows: auto auto;
+                gap: 15px;
+            }
+
+            /* .formulariologin form input{
             width: 300px;
             height: 35px;
             border-radius: 20px;
@@ -171,86 +196,92 @@
             border: #F4F1F1;
             
         } */
-         .input-container{
-            display: flex;
-            align-items: center;
-            border-radius: 20px;
-            padding: 8px;
-            width: 300px;
-            margin-bottom: 10px;
-            background: #F4F1F1;
-         }
-         .input-container i{
-            margin-right: 8px;
-         }
-         .input-container input{
-            border: none;
-            outline: none;
-            flex: 1;        
-            font-size: 16px;
-            background-color: #F4F1F1;
-         }
-         .esqueci-senha{
-            width: 80%;
-            height: auto;
-            display: flex;
-            justify-content: end;
-            align-items: end;
-         }
-         .esqueci-senha a{
-            font-size: 10px;
-            color: #414141;
-         }
-         .button{
-            margin-top: 15px;
-         }
-         .button button{
-            width: 300px;
-            height: 30px;
-            border-radius: 20px;
-            background-color: #940808;
-            border: 0;
-            color: #ffffff;
-            font-size: 15px;
-            animation: 0.3s ease-in-out;
-         }
-         .button button:hover{
-             transform: scale(1.02);
-           }
-         
-    }
-    
+            .input-container {
+                display: flex;
+                align-items: center;
+                border-radius: 20px;
+                padding: 8px;
+                width: 300px;
+                margin-bottom: 10px;
+                background: #F4F1F1;
+            }
 
-   </style>
+            .input-container i {
+                margin-right: 8px;
+            }
+
+            .input-container input {
+                border: none;
+                outline: none;
+                flex: 1;
+                font-size: 16px;
+                background-color: #F4F1F1;
+            }
+
+            .esqueci-senha {
+                width: 80%;
+                height: auto;
+                display: flex;
+                justify-content: end;
+                align-items: end;
+            }
+
+            .esqueci-senha a {
+                font-size: 10px;
+                color: #414141;
+            }
+
+            .button {
+                margin-top: 15px;
+            }
+
+            .button button {
+                width: 300px;
+                height: 40px;
+                border-radius: 20px;
+                background-color: #940808;
+                border: 0;
+                color: #ffffff;
+                font-size: 15px;
+                animation: 0.3s ease-in-out;
+            }
+
+            .button button:hover {
+                transform: scale(1.02);
+            }
+
+        }
+    </style>
 </head>
+
 <body>
     <header></header>
 
     <main>
         <div class="logosenai">
             <img src="../assets/logo_senai.png" alt="logosenai" p>
-                <h1>Formando quem forma a indústria.</h1>
+            <h1>Formando quem forma a indústria.</h1>
         </div>
-        
+
 
         <div class="formulariologin">
-            
+
             <form action="">
                 <div class="input-container">
                     <i class="bi bi-envelope"></i>
                     <input type="email" name="email" id="email" placeholder="Email">
-                  </div>
-                
-                  <div class="input-container">
+                </div>
+
+                <div class="input-container">
                     <i class="bi bi-lock"></i>
                     <input type="password" name="senha" id="senha" placeholder="Senha">
-                  </div>
+                </div>
             </form>
 
             <div class="esqueci-senha">
-               <a href="">Esqueci minha senha</a> 
+                <a href="">Esqueci minha senha</a>
             </div>
-            
+
             <div class="button">
                 <button type="button" onclick="Entrar()">ENTRAR</button>
             </div>
@@ -261,43 +292,44 @@
     <footer></footer>
     <script>
         async function Entrar() {
-    const email = document.getElementById("email").value;
-    const senha = document.getElementById("senha").value;
+            const email = document.getElementById("email").value;
+            const senha = document.getElementById("senha").value;
 
-    if (!email || !senha) {
-        alert("Preencha todos os campos!");
-        return;
-    }
+            if (!email || !senha) {
+                alert("Preencha todos os campos!");
+                return;
+            }
 
-    try {
-        const response = await fetch("/../patrimonio/back-end/endpoints/post/LoginSSO.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ email: email, senha: senha })
-        });
+            try {
+                const response = await fetch("/../patrimonio/back-end/endpoints/post/LoginSSO.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ email: email, senha: senha })
+                });
 
-        const data = await response.json();
-        console.log(data); // para debug
+                const data = await response.json();
+                console.log(data); // para debug
 
-        if (data.status === "success") {
-            alert("Login realizado com sucesso!");
-            // salvar token no localStorage (ou sessionStorage)
-            localStorage.setItem("token", data.token);
+                if (data.status === "success") {
+                    alert("Login realizado com sucesso!");
+                    // salvar token no localStorage (ou sessionStorage)
+                    localStorage.setItem("token", data.token);
 
-            // redireciona para home
-            window.location.href = "home_colaborador.html";
-        } else {
-            alert("Erro: " + data.message);
+                    // redireciona para home
+                    window.location.href = "home_colaborador.html";
+                } else {
+                    alert("Erro: " + data.message);
+                }
+
+            } catch (error) {
+                console.error("Erro na requisição:", error);
+                alert("Erro de conexão com o servidor.");
+            }
         }
-
-    } catch (error) {
-        console.error("Erro na requisição:", error);
-        alert("Erro de conexão com o servidor.");
-    }
-}
     </script>
-   
+
 </body>
+
 </html>
