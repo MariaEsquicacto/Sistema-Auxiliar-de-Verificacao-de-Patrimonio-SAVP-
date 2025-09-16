@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <title>Relatório</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-colaborador">
+      <div class="menu">
+        <button class="hamburguer">
+          <div id="barra1" class="barra"></div>
+          <div id="barra2" class="barra"></div>
+          <div id="barra3" class="barra"></div>
+        </button>
+      </div>
+      <div class="logo">
+        <img src="../assets/logo_senai.png" alt="logo-senai">
+      </div>
+      <div class="notificacao">
+        <i class="bi bi-bell"></i>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="escrita">
+      <i class="bi bi-arrow-left" onclick="Voltar()"></i>
+      <h1>Relatório</h1>
+    </div>
+
+
+    <div class="filtrar">
+      <div class="iconfiltro">
+        <i class="bi bi-funnel"></i>
+      </div>
+
+      <div class="filter-item-wrapper">
+        <!-- <div class="itensfiltro"> -->
+        <!-- Status -->
+        <div class="filter-item-wrapper">
+          <div id="status-item" class="item" role="button" aria-expanded="false" tabindex="0">
+            <p>Status</p>
+            <i class="bi bi-caret-down-fill"></i>
+          </div>
+          <div id="dropdown-status" class="dropdown-status" role="menu" aria-hidden="true">
+            <div class="dropdown-option" data-value="pendente">Local correto</div>
+            <div class="dropdown-option" data-value="andamento">Local incorreto</div>
+            <div class="dropdown-option" data-value="concluido">Não encontrado</div>
+          </div>
+        </div>
+
+        <!-- Ambiente -->
+        <div class="filter-item-wrapper">
+          <div id="ambiente-item" class="item" role="button" aria-expanded="false" tabindex="0">
+            <p>Ambiente</p>
+            <i class="bi bi-caret-down-fill"></i>
+          </div>
+          <div id="dropdown-ambiente" class="dropdown-status" role="menu" aria-hidden="true">
+            <div class="dropdown-option" data-value="oficina">Oficina</div>
+            <div class="dropdown-option" data-value="ti">T.I.</div>
+            <div class="dropdown-option" data-value="metalmecanica">Metalmecânica</div>
+            <div class="dropdown-option" data-value="eletroeletronica">Eletroeletronica</div>
+            <div class="dropdown-option" data-value="panificacao">Panificação</div>
+          </div>
+        </div>
+
+        <!-- Data -->
+         <!-- DATA (abre modal) -->
+         <div class="filter-item-wrapper">
+          <div class="item" data-bs-toggle="modal" data-bs-target="#modalData">
+            <p>Data</p>
+            <i class="bi bi-calendar-event"></i>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- WRAPPER relativo: botão + dropdown -->
+
+      <!-- botão Status -->
+      <!-- <div id="status-item" class="item" role="button" aria-expanded="false" tabindex="0">
+              <p>Status</p>
+              <i class="bi bi-caret-down-fill"></i>
+            </div> -->
+
+      <!-- dropdown embaixo do botão -->
+      <div id="dropdown-status" class="dropdown-status" role="menu" aria-hidden="true">
+        <div class="dropdown-option" data-value="pendente">Pendente</div>
+        <div class="dropdown-option" data-value="andamento">Em andamento</div>
+        <div class="dropdown-option" data-value="concluido">Concluído</div>
+      </div>
+
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const items = [
+        { button: 'status-item', dropdown: 'dropdown-status' },
+        { button: 'ambiente-item', dropdown: 'dropdown-ambiente' },
+        { button: 'data-item', dropdown: 'dropdown-data' }
+      ];
+    
+      function closeAll() {
+        items.forEach(({ button, dropdown }) => {
+          document.getElementById(dropdown).classList.remove('show');
+          document.getElementById(button).setAttribute('aria-expanded', 'false');
+          document.getElementById(dropdown).setAttribute('aria-hidden', 'true');
+        });
+      }
+    
+      items.forEach(({ button, dropdown }) => {
+        const btn = document.getElementById(button);
+        const menu = document.getElementById(dropdown);
+    
+        function toggleDropdown(e) {
+          e.stopPropagation();
+          const isOpen = menu.classList.contains('show');
+          closeAll();
+          if (!isOpen) {
+            menu.classList.add('show');
+            btn.setAttribute('aria-expanded', 'true');
+            menu.setAttribute('aria-hidden', 'false');
+          }
+        }
+    
+        btn.addEventListener('click', toggleDropdown);
+        btn.addEventListener('keydown', (ev) => {
+          if (ev.key === 'Enter' || ev.key === ' ') {
+            ev.preventDefault();
+            toggleDropdown(ev);
+          }
+        });
+    
+        // clique em uma opção
+        menu.querySelectorAll('.dropdown-option').forEach(option => {
+          option.addEventListener('click', () => {
+            console.log(`${button} selecionado:`, option.dataset.value);
+            closeAll();
+          });
+        });
+      });
+    
+      // fechar ao clicar fora
+      document.addEventListener('click', closeAll);
+      // fechar com ESC
+      document.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape') closeAll();
+      });
+    });
+    </script>
+    
+
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Ambientes</title>
+</head>
+<body>
+    <header>
+        <div class="header-colaborador">
+        <div class="menu">
+            <button class="hamburguer">
+                <div id="barra1" class="barra"></div>
+                <div id="barra2" class="barra"></div>
+                <div id="barra3" class="barra"></div>
+            </button>
+            <!-- <nav>
+                <ul>
+                    <div class="perfil">
+                        <img src="" alt="foto de perfil">
+                        <p>Colaborador</p>
+                    </div>
+                    <li><a href="estoque.php">Home</a></li>
+                    <li><a href="calendario.php">Ambientes</a></li>
+                    <li><a href="relatorio.php">Dashboard</a></li>
+                    <li><a href="#" id="logout-btn">Sair</a></li>
+                </ul>
+            </nav> -->
+        </div>
+        <div class="logo">
+            <img src="../assets/logo_senai.png" alt="logo-senai">
+        </div>
+        <div class="notificacao">
+            <i class="bi bi-bell"></i>
+        </div>
+    </div>
+    </header>
+
+    <main>
+        <div class="escrita">
+            <i class="bi bi-arrow-left" onclick="Voltar()"></i>
+            <h1>Ambientes</h1>
+        </div>
+
+        
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Pesquisar Ambiente..." aria-label="Search" id="barra" />
+        <button class="btn btn-outline" type="submit" style="background-color: #940808; color:#fff;"><i class="bi bi-search"></i></button>
+      </form>
+    
+      <div class="ambientes-card">
+        <div class="conteiners">
+            <!-- icon -->
+             <p>Laboratório 01 de TI</p>
+        </div>
+        <div class="conteiners">
+            <!-- icon -->
+             <p>Laboratório 01 de TI</p>
+        </div>
+        <div class="conteiners">
+            <!-- icon -->
+             <p>Laboratório 01 de TI</p>
+        </div>
+        <div class="conteiners">
+            <!-- icon -->
+             <p>Laboratório 01 de TI</p>
+        </div>
+
+      </div>
+    </main>
+
+    <script>
+        function Voltar(){
+            window.location.href = 'home_colaborador.html'
+        }
+    </script>
+</body>
+</html>
